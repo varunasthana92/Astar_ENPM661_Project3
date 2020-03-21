@@ -23,7 +23,7 @@ Project 3 has one python scripts that generates a 2D map with obstacles and find
 5. Exploration
 6. Path Generation
 
-## How to run for point robot
+## How to run
 ```
 $ git clone https://github.com/varunasthana92/Astar_ENPM661_Project3.git
 $ cd Astar_ENPM661_Project3

@@ -40,12 +40,12 @@ The libraries imported for this project are:
 * __cv2__ - used to save the image as a JPEG
 * __time__ - used to keep track of time when solving
 
-## Section 2: Maps
+## Section 2: Map
 
 The final map is defined with five obstacles and hard-coded to specific dimensions. For a point robot, the size is fixed. For a rigid robot, the obstacles expand to account for the radius and clearance, and the program then treats the problem as a point robot.
 
-* class Isobs is used to check wheter a given float(x,y) coordinate is in free space or in the obstacle. This uses the concept of Half-Planes and hence the configuration space is treated as a continuoys space and is not discretized.
-* class FinalMap is used to generate the map and store it as an image for visualization. This required to discretize the configuration space into a matrix
+* __Class Isobs()__ is used to check wheter a given float(x,y) coordinate is in free space or in the obstacle. This uses the concept of Half-Planes and hence the configuration space is treated as a continuoys space and is __not discretized__.
+* __Class FinalMap()__ is used to generate the map and store it as an image for visualization. This required to discretize the configuration space into a matrix
 
 ## Section 3: Actions and Nodes
 

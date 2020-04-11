@@ -1,8 +1,5 @@
 # Astar_Search_Algorithm_ENPM661-Project-3 Phase3
 
-## By Varun Asthana
-### University of Maryland
-
 ## Overview
 
 Project 3 phase 3 has one python scripts that generates a 2D map with obstacles and finds a path to travel from a user-defined start and end point. __SCRIPT REQUIRE PYTHON2.7 TO RUN. PYTHON3 WILL NOT WORK.__ Python 2.7 was used to test the script. Script is used for a rigid robot that has a defined radius.

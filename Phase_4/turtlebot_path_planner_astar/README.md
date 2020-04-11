@@ -1,8 +1,5 @@
 # Astar_Search_Algorithm_ENPM661-Project-3 Phase4
 
-## By Varun Asthana
-### University of Maryland
-
 ## Overview
 
 Project 3 phase 4 has 2 python scripts. One script is similar to script from phase3 that generates a 2D map with obstacles and finds a path to travel from a user-defined start and end point. The other script is used to initialize ros node and publish over the required ROS tpics for the simulation of the TurtleBot in Gazevo.

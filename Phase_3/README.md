@@ -1,14 +1,13 @@
 # Astar_Search_Algorithm_ENPM661-Project-3 Phase3
 
 ## By Varun Asthana
-
 ### University of Maryland
 
 ## Overview
 
 Project 3 phase 3 has one python scripts that generates a 2D map with obstacles and finds a path to travel from a user-defined start and end point. __SCRIPT REQUIRE PYTHON2.7 TO RUN. PYTHON3 WILL NOT WORK.__ Python 2.7 was used to test the script. Script is used for a rigid robot that has a defined radius.
 
-## Dependencies
+### Dependencies
 * numpy
 * math
 * matplotlib.pyplot
@@ -17,7 +16,7 @@ Project 3 phase 3 has one python scripts that generates a 2D map with obstacles 
 * heapq
 * argparse
 
-## How to run
+### How to run
 ```
 $ git clone https://github.com/varunasthana92/Astar_ENPM661_Project3.git
 $ cd Astar_ENPM661_Project3/Phase_3
@@ -28,7 +27,7 @@ It also accpets an argument to display the explored nodes. --exp with default as
 $ python2 astar.py --exp=1
 ```
 
-## User Inputs
+### User Inputs
 All inputs are to be given in METERS
 * Robot clearance (eg: 0.1)
 * Robot initial position in x,y and theta (in degrees) with origin at the center of the map (eg: -4,-3,120)
@@ -46,11 +45,11 @@ Eg 1.015 m will be treated as 1.016 m or 102.0 cm
 
 Also, ceil value of radius + clearance will be considered. Threshold for reaching the goal is set at 0.1m (or 10cm). 
 
-## Path Generation
+### Path Generation
 The run speed from top left to bottom right of the map (withut plotting of explored nodes) is around 5 mins.
 
 After the goal point is reached, a path will be traced back from the start to goal point. On the map, this path will be drawn in RED. In the file location, an image "back_tracking.png" is saved. At the end, the user can type any number and press enter to exit the program.
 
-## Vidoe Outputs
+### Vidoe Outputs
 * exp1.mp4 shows the exploration and back-tracking for a nearby start and goal point.
 * exp3a.mp4 and exp3b.mp4 shows explored nodes and back tracking respectively for the start point at bottom left and the goal point at the top right. Since the plot time was very high, the explored nodes does not show complete exploration but only a part of it.

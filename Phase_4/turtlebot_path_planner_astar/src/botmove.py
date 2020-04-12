@@ -2,9 +2,6 @@
 
 import rospy
 from geometry_msgs.msg import Twist
-# from cv_bridge import CvBridge
-# import cv2
-# import os
 import numpy as np
 from astar import astar
 
@@ -20,23 +17,12 @@ class Node(object):
         self.loop_rate.sleep()
 
     def pubData(self, lin, rot):
-
         self.data.angular.z= rot
         self.data.linear.x = lin
-        #rospy.spin()
-        
-            # rospy.loginfo('publishing cmd data')
-        # for i in range(10):
         self.pub.publish(self.data)
         self.loop_rate.sleep()
 
 if __name__ == '__main__':
-    
-    # Parser = argparse.ArgumentParser()
-    # Parser.add_argument('--explore', default=0, help='Set to 1 if want to see all explored nodes animation (default: 0)')
-    # Parser.add_argument('--inp', default=0, help='Set to 1 to provide user input data (default: 0)')
-
-    # Args = Parser.parse_args()
     rospy.init_node("botmove", anonymous=False)
     init_x = rospy.get_param('~init_x')
     init_y = rospy.get_param('~init_y')

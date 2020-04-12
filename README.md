@@ -13,3 +13,8 @@ Phase2 is the implementation of A* algorithm for a rigid robot with no holonomic
 Phase3 is the implementation of A* algorithm for a rigid robot with non-holonocis constraints of a differential drive.
 
 Phase4 is the simulation of Phase3 for a TurtleBot in Gazebo.
+
+## Donload
+```
+$ git clone https://github.com/varunasthana92/Astar_ENPM661_Project3.git
+```

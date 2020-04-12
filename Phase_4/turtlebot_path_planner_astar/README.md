@@ -27,7 +27,11 @@ To run the package-
 $ sudo apt-get install ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-rviz-launchers
 ```
 ### How to build and run the program
-Copy the folder inside the Phase4 folder to the catkin_ws/src directory
+```
+git clone https://github.com/varunasthana92/Astar_ENPM661_Project3.git
+```
+
+Copy the folder inside the Phase4 directory to the catkin_ws/src directory
 ```
 $ cd catkin_ws
 $ catkin_make

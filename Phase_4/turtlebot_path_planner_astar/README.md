@@ -31,7 +31,7 @@ $ sudo apt-get install ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps r
 git clone https://github.com/varunasthana92/Astar_ENPM661_Project3.git
 ```
 
-Copy the folder inside the Phase4 directory to the catkin_ws/src directory
+Copy the the directory 'turtlebot_path_planner_astar' from inside the Phase4 directory to your catkin_ws/src directory
 ```
 $ cd catkin_ws
 $ catkin_make

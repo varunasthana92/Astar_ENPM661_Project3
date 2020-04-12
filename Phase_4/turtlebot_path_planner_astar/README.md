@@ -37,7 +37,7 @@ $ roslaunch turtlebot_path_planner_astar planner.launch c:=0.2 x:=-4.5 y:=3 t:=1
 
 In the last command above, parameter c is for robot clearance, (x,y,t) are for initial pose as coordinates and theta with origin at the center of the map and theta is measured anti-clockwise from positive x-axis. All parameters are to be in METERS except for 't' to be in degrees.
 
-__Note: No control law has been implemented to check that the same trajectory is followed in simulation. Hence It is recommended to use near by start and goal points and also to avoid any start point which would require a turn of 180 degrees initially to reach the goal. Also because of same reason, it is recommended to use the clearance of 0.2 or more.__
+__Note: No control law has been implemented to check that the same trajectory is followed in simulation. Hence It is recommended to use near by start and goal points and also avoid any start point which would require a turn of 180 degrees (initially) to reach the goal. Also because of the same reason, it is recommended to use a clearance of 0.2 or more.__
 
 ### User Inputs after launching of ros nodes
 All inputs are to be given in METERS

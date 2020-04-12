@@ -46,3 +46,6 @@ Also, ceil value of radius + clearance will be considered. Threshold for reachin
 The run speed from top left to bottom right of the map (withut plotting of explored nodes) is around 5 mins.
 
 After the goal point is reached, a path will be traced back from the start to goal point. On the map, this path will be drawn in RED. In the file location, an image "back_tracking.png" is saved. At the end, the user can type any number and press enter to exit the program.
+
+### Vidoe Outputs
+* demo1.mp4 shows the explored nodes and the back tracking of the final path for a nearby start and goal nodes.

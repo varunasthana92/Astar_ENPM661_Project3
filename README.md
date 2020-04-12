@@ -14,7 +14,7 @@ Phase3 is the implementation of A* algorithm for a rigid robot with non-holonoci
 
 Phase4 is the simulation of Phase3 for a TurtleBot in Gazebo.
 
-## Donload
+## Download
 ```
 $ git clone https://github.com/varunasthana92/Astar_ENPM661_Project3.git
 ```

@@ -32,6 +32,14 @@ git clone https://github.com/varunasthana92/Astar_ENPM661_Project3.git
 ```
 
 Copy the the directory 'turtlebot_path_planner_astar' from inside the Phase4 directory to your catkin_ws/src directory
+
+```
+$ cd catkin_ws/src/turtlebot_path_planner_astar/src
+$ chmod +x botmove.py
+```
+
+Ensure the above access is give to the 'botmove.py' and also do not clone the entire repository inside the catkin/src directory (it affect the catkin_make command)
+
 ```
 $ cd catkin_ws
 $ catkin_make

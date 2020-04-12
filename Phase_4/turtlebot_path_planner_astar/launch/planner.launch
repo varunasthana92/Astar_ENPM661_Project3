@@ -2,7 +2,7 @@
   <arg name="x" default="-4.0" />
   <arg name="y" default="3.0" />
   <arg name="t" default="0.0" />
-  <arg name="c" default="0.2" />
+  <arg name="c" default="0.3" />
 
   <arg name="base"      value="$(optenv TURTLEBOT_BASE kobuki)"/> <!-- create, roomba -->
   <arg name="battery"   value="$(optenv TURTLEBOT_BATTERY /proc/acpi/battery/BAT0)"/>  <!-- /proc/acpi/battery/BAT0 --> 

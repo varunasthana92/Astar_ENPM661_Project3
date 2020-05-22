@@ -1,6 +1,3 @@
-# ENPM 661 PROJECT 3 PHASE 2
-# Varun Asthana
-
 # =====SECTION 1: LIBRARIES=====
 import numpy as np
 import copy as cp

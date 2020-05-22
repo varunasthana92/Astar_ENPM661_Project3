@@ -1,6 +1,3 @@
-# ENPM 661 PROJECT 3 PHASE 2
-# Varun Asthana
-
 # =====SECTION 1: LIBRARIES=====
 import numpy as np
 import copy as cp
@@ -297,20 +294,21 @@ def move(currState, r, L, UL, UR, obsChk, fact, explore=0, chk = True, plot= Fal
     return status, final, dis
 
 # =====SECTION 4: USER INPUT=====
-def astar(initCord, clrn, exp=0):
+def astar(exp):
     fact = 100
     hc= 5
     wc = -5
     tot = 0
     rad = 0.177 # 0.354/2
-    cart= np.array(initCord, dtype='f') 
     actionSet= []
-    clrr = np.array(clrn, dtype='f')
-    if(clrr[0] >= 0):
-        clr = clrr[0]
-    else:
-        print('Clearnace cannot be negative.....\nTerminating')
-        return actionSet
+    checkInp= True
+    while checkInp:
+        print("Enter the robot's clearance (in meters, max upto 3 decimal places will be considered): ")
+        try:
+            clr = float(input())
+            checkInp= False
+        except:
+            print 'Wrong input....Try again'
     clr = float(int(clr*1000)/1000.)
     tot= rad+clr
     print('Total clearance from obstacles is set at (meters): ', tot)
@@ -327,18 +325,28 @@ def astar(initCord, clrn, exp=0):
 
     obsChk= Obs(10, 10, tot, fact)
 
-    init= np.array([hc-cart[1], cart[0]-wc, cart[2]], dtype='f')
-    if(not obsChk.notObs(init[0], init[1])):
-        print('Start position cannot be in the obstacle.....\nTerminating')
-        return actionSet
-
     print("Note: ")
     print("All user data is interpreted as in meters")
     print("Least count of 1cm is considered for the complete system")
-    print("with a threshold of 1cm in x and y coordinates and 30 degrees in rotation for node generation")
+    print("with a threshold of 0.5cm in x and y coordinates and 30 degrees in rotation for node generation")
     print("Eg 1.014 m will be treated as 1.010 m or 101.0 cm")
     print("Eg 1.015 m will be treated as 1.015 m or 101.0 cm")
     print("Eg 1.015 m will be treated as 1.016 m or 102.0 cm")
+
+    checkInp= True
+    while checkInp:
+        print('Enter the initial starting coordinates in x as (-5,5)m & y as (-5,5)m; and theta in [0,360) with origin at center')
+        print('Enter in the order of x,y,t [separated by commas]: ')
+        cart= np.array(input(), dtype='f')
+        if(len(cart)!=3):
+            print 'Wrong input....Try again \nNote: Only 3 numbers needed inside the map boundaries'
+        else:
+            init= np.array([hc-cart[1], cart[0]-wc, cart[2]], dtype='f')
+            # init_n = threshold_state(init)
+            if(not obsChk.notObs(init[0], init[1])):
+                print 'Start position cannot be in the obstacle.....Try again'
+            else:
+                checkInp = False
 
     height = int(10*fact/thres_y)
     width = int(10*fact/thres_x)
@@ -465,9 +473,17 @@ def astar(initCord, clrn, exp=0):
         plt.pause(0.000001)
         i-=1
     plt.savefig('back_tracking.png', bbox_inches='tight')
-    print('Enter any NUMBER to start the simulation in Gazebo: ')
+    print('Enter any NUMBER to exit: ')
     input()
     plt.ioff()
     if(flag==0):
         actionSet.reverse()
     return actionSet
+
+
+Parser = argparse.ArgumentParser()
+Parser.add_argument('--exp', default=0, type =int, help='Set to 1 to plot all explored nodes (default: 0)')
+Args = Parser.parse_args()
+
+exp = Args.exp
+astar(exp)

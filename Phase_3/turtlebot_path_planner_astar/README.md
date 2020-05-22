@@ -1,37 +1,31 @@
-# Astar_Search_Algorithm_ENPM661-Project-3 Phase4
+# Astar_Path_Planner_Phase3
 
 ## Overview
 
-Project 3 phase 4 has 2 python scripts. One script is similar to script from phase3 that generates a 2D map with obstacles and finds a path to travel from a user-defined start and end point. The other script is used to initialize ros node and publish over the required ROS tpics for the simulation of the TurtleBot in Gazevo.
+Phase 3 has 2 python scripts. One script is similar to script from phase3 that generates a 2D map with obstacles and finds a path to travel from a user-defined start and end point. The other script is used to initialize ros node and publish over the required ROS tpics for the simulation of the TurtleBot in Gazevo.
 
 ### Dependencies
 * ROS Kinetic
 * Gazebo7
 * python2.7
-* numpy
-* math
 * matplotlib.pyplot
 * cv2 (version 3.3)
-* time
-* heapq
-* argparse
-
 
 ### Assumptions
 To run the package-
 1) Above mentioned dependancies are available and running in the user's system.
 2) catkin_ws workspace is properly setup.
 (If your workspace is named something else or is at other path, use that name and/or path in the below commands)
-3) turtlebot package is installed. If not, then run the below command to install it.
+3) Turtlebot package is installed. If not, then run the below command to install it.
 ```
 $ sudo apt-get install ros-kinetic-turtlebot-gazebo ros-kinetic-turtlebot-apps ros-kinetic-turtlebot-rviz-launchers
 ```
 ### How to build and run the program
 ```
-$ git clone https://github.com/varunasthana92/Astar_ENPM661_Project3.git
+$ git clone https://github.com/varunasthana92/Astar_Path_Planner.git
 ```
 
-Copy the the directory 'turtlebot_path_planner_astar' from inside the Phase4 directory to your catkin_ws/src directory
+Copy the the directory 'turtlebot_path_planner_astar' from inside the Phase_3 directory to your catkin_ws/src directory
 
 ```
 $ cd catkin_ws/src/turtlebot_path_planner_astar/src

@@ -5,6 +5,7 @@ import math
 import matplotlib.pyplot as plt
 import cv2
 import time
+import io
 
 # =====SECTION 2: MAPS=====
 
@@ -413,7 +414,7 @@ def plotStates(src, dst):
     Y0 = src[0]
     U0 = dst[1]-X0
     V0 = dst[0]-Y0
-    plt.quiver(X0, Y0, U0, -V0, units='xy' ,scale=1,headwidth = 1, headlength=0)
+    plt.quiver(X0, Y0, U0, -V0, units='xy' ,scale=1,color= 'r', headwidth = 1, headlength=0)
     return
 
 def plotBack(src, dst):
@@ -421,7 +422,7 @@ def plotBack(src, dst):
     Y0 = src[0]
     U0 = dst[1]-X0
     V0 = dst[0]-Y0
-    plt.quiver(X0, Y0, U0, -V0, units='xy' , scale=1, color= 'r', headwidth = 1, headlength=0)
+    plt.quiver(X0, Y0, U0, -V0, units='xy' , scale=1, color= 'b', headwidth = 1, headlength=0)
     return
 
 # Function to take a step in the direction of speficied angle degree
@@ -515,6 +516,11 @@ while checkInp:
 			checkInp = False
 
 plt.ioff()
+circle1 = plt.Circle((init[1], init[0]), 6)
+circle2= plt.Circle((finalState[1], finalState[0]), 6, color='g')
+plt.gcf().gca().add_artist(circle1)
+plt.gcf().gca().add_artist(circle2)
+
 graph.setCost2go(fs_n)
 parentState= init
 parentCost= 0
@@ -541,6 +547,10 @@ plt.ion()
 minCost= 0.0
 graph.setTotCost()
 graph.totCost[parentNode[0], parentNode[1], parentNode[2]]= graph.totCost[parentNode[0], parentNode[1], parentNode[2]]*(-1)
+
+# set saveExplore to TRUE if want to save explored map
+saveExplore = False
+
 while(found != True):
     # current node is termed as parent node    
     for angle in range(0,360,30): # Iterating for all possible angles
@@ -563,7 +573,9 @@ while(found != True):
         print('No solution exist, terminating....')
         count=1
         break
-    plotStates(org_parentState, new_parentState)
+    
+    if saveExplore:
+        plotStates(org_parentState, new_parentState)
     parentState = new_parentState
     parentNode = threshold_state(parentState)
     parentCost = graph.cost2come[parentNode[0], parentNode[1], parentNode[2]]
@@ -582,8 +594,9 @@ while(found != True):
 # =====SECTION 6: PATH GENERATION=====
 # Print final time
 print("Time explored = %2.3f seconds " % (time.time() - start_time))
-plt.show()
-plt.savefig('fig3.png', bbox_inches='tight')
+if plotStates(org_parentState, new_parentState):
+    plt.show()
+    plt.savefig('Explored.png', bbox_inches='tight')
 
 # back-tracking for the shortest path
 reached_state = graph.getStates(int(len(graph.allStates))-1)
@@ -591,16 +604,28 @@ reached_node = threshold_state(reached_state)
 ans= graph.getOwnId(reached_node)
 if(not count):
     print '\nYellow area shows all the obstacles and White area is the free space'
-    print 'Black lines show all the explored Nodes (area)'
-    print 'Red line shows optimal path (traced from goal node to start node)'
+    if saveExplore:
+        print 'Red area show all the explored Nodes (area)'
+    print 'Blue line shows optimal path (traced from goal node to start node)'
+
+Path = []
+Path.append(graph.getStates(ans))
 while(ans!=0 and count==0):
     startState= graph.getStates(ans)
     startNode = threshold_state(startState)
     ans= graph.getParentId(startNode)
     nextState= graph.getStates(ans)
     nextNode = threshold_state(nextState)
+    Path.append(nextState)
+
+i = 1
+Path.reverse()
+while count == 0 and i < len(Path):
+    startState = Path[i-1]
+    nextState = Path[i]
     plotBack(startState, nextState)
     plt.pause(0.000001)
+    i+=1
 
 plt.show()
 plt.savefig('back_tracking.png', bbox_inches='tight')

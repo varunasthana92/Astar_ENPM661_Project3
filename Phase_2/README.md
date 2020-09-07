@@ -1,4 +1,4 @@
-# Astar_Path_Planner_Phase2
+# Astar Path Planner Phase 2
 
 ## Overview
 

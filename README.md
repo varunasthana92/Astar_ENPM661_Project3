@@ -12,14 +12,14 @@ Initial position has a parameter of __theta__ defining the heading angle in the 
 * Phase 1 is the implementation of A* algorithm for a rigid robot with no holonomic constraint.
 
 <p align="center">
-	<img src="https://github.com/varunasthana92/Astar_Path_Planner/blob/master/Phase_1/sample%20outputs/output_rigid.gif" width="600">
+	<img src="https://github.com/varunasthana92/Astar_Path_Planner/blob/master/Phase_1/sample%Outputs/output_rigid.gif" width="600">
 </p>
 
 * Phase 2 is the implementation of A* algorithm for a rigid robot with non-holonomic constraints of a differential drive.
 
 * Phase 3 is the simulation of Phase 2 for a TurtleBot in Gazebo.
 <p align="center">
-	<img src="https://github.com/varunasthana92/Astar_Path_Planner/blob/master/Phase_1/sample%20outputs/demo1_speed8x.gif" width="600">
+	<img src="https://github.com/varunasthana92/Astar_Path_Planner/blob/master/Phase_3/turtlebot_path_planner_astar/sampleOutputs/demo1_speed8x.gif" width="600">
 </p>
 
 ## Download

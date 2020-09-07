@@ -1,4 +1,8 @@
-# Astar_Path_Planner_Phase1
+# Astar Path Planner Phase 1
+
+<p align="center">
+	<img src="https://github.com/varunasthana92/Astar_Path_Planner/blob/master/Phase_1/sample%20outputs/output_rigid.gif" width="600">
+</p>
 
 ## Overview
 
@@ -16,6 +20,9 @@ Phase 1 has one python scripts that generates a 2D map with obstacles and finds 
 * cv2 (version 3.3)
 
 ### How to run
+Phase 1 is the implementation of A* algorithm for a rigid robot with no holonomic constraint. Action set looks for the best move considering the angle in [0,360) with an incremental value of 30 degrees. Thus the computation speed is low for small step size. It is recommended to use a step size of 10 for quick results.<br><br>
+Incorrect input data may terminate the program. In such case re-run with correct input (as per the instructions on the screen).
+
 ```
 $ git clone https://github.com/varunasthana92/Astar_Path_Planner.git
 $ cd Phase_1

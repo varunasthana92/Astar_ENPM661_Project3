@@ -1,4 +1,7 @@
-# Astar_Path_Planner_Phase3
+# Astar Path Planner Phase 3
+<p align="center">
+	<img src="https://github.com/varunasthana92/Astar_Path_Planner/blob/master/Phase_1/sample%20outputs/output_rigid.gif" width="600">
+</p>
 
 ## Overview
 

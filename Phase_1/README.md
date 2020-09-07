@@ -1,7 +1,7 @@
 # Astar Path Planner Phase 1
 
 <p align="center">
-	<img src="https://github.com/varunasthana92/Astar_Path_Planner/blob/master/Phase_1/sample%20outputs/output_rigid.gif" width="600">
+	<img src="https://github.com/varunasthana92/Astar_Path_Planner/blob/master/Phase_1/sampleOutputs/output_rigid.gif" width="600">
 </p>
 
 ## Overview

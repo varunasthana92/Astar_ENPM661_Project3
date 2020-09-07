@@ -1,6 +1,6 @@
 # Astar Path Planner Phase 3
 <p align="center">
-	<img src="https://github.com/varunasthana92/Astar_Path_Planner/blob/master/Phase_1/sample%20outputs/output_rigid.gif" width="600">
+	<img src="https://github.com/varunasthana92/Astar_Path_Planner/blob/master/Phase_3/turtlebot_path_planner_astar/sampleOutputs/demo1_speed8x.gif" width="600">
 </p>
 
 ## Overview
